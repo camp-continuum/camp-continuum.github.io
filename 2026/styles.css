@@ -384,16 +384,17 @@ p:last-child {
   text-transform: uppercase;
 }
 
-/* ---------- Banner photo ---------- */
+/* ---------- Who photo ---------- */
 
-.banner-photo {
-  margin: 0 auto;
-  padding: 1.5rem 0 0;
+.who-photo {
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: 1.5rem auto 0;
 }
 
-.banner-photo img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
+@media (max-width: 660px) {
+  .who-photo {
+    width: 100%;
+  }
 }
