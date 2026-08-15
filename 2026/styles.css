@@ -263,6 +263,69 @@ p:last-child {
   -webkit-overflow-scrolling: touch;
 }
 
+/* ---------- Rotations ---------- */
+
+.rotation-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1rem;
+  font-size: 0.9375rem;
+}
+
+.rotation-filter select {
+  font: inherit;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #c8c4bb;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #1a1a1a;
+}
+
+.rotation-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-top: 1px solid #d4d0c8;
+  border-left: 1px solid #d4d0c8;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
+
+.rotation-table th,
+.rotation-table td {
+  text-align: left;
+  padding: 0.55rem 0.9rem;
+  border-right: 1px solid #d4d0c8;
+  border-bottom: 1px solid #d4d0c8;
+  line-height: 1.5;
+}
+
+.rotation-table thead th {
+  background-color: #eceae2;
+  border-color: #c8c4bb;
+  font-weight: 600;
+}
+
+.rotation-table tbody th {
+  position: sticky;
+  left: 0;
+  background-color: #eceae2;
+  border-color: #c8c4bb;
+  font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.rotation-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.rotation-table tbody tr:nth-child(even) td {
+  background-color: #f3f1eb;
+}
+
 @media (max-width: 540px) {
   .schedule-table td:first-child {
     width: auto;

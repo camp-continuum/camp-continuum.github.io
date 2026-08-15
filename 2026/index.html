@@ -68,9 +68,19 @@
       </ul>
     </section>
 
-    <section class="section">
+    <section class="section" id="rotations">
+      <h2>Speed ideation rotations</h2>
+      <p>Find your camper number to see where to go for each round.</p>
 
-      <table>
+      <div class="rotation-filter">
+        <label for="camper-filter">Show camper</label>
+        <select id="camper-filter">
+          <option value="">All campers</option>
+        </select>
+      </div>
+
+      <div class="table-scroll">
+      <table class="rotation-table" id="rotation-table">
   <thead>
     <tr>
       <th>Camper</th>
@@ -382,6 +392,7 @@
     </tr>
   </tbody>
 </table>
+      </div>
     </section>
 
     <section class="section" id="schedule">
@@ -585,6 +596,27 @@
 
       window.addEventListener('scroll', setActive, { passive: true });
       setActive();
+    })();
+
+    (function () {
+      const select = document.getElementById('camper-filter');
+      const rows = document.querySelectorAll('#rotation-table tbody tr');
+
+      rows.forEach(function (row) {
+        const id = row.querySelector('th').textContent.trim();
+        const opt = document.createElement('option');
+        opt.value = id;
+        opt.textContent = 'Camper ' + id;
+        select.appendChild(opt);
+      });
+
+      select.addEventListener('change', function () {
+        const value = select.value;
+        rows.forEach(function (row) {
+          const id = row.querySelector('th').textContent.trim();
+          row.hidden = value !== '' && id !== value;
+        });
+      });
     })();
   </script>
 </body>
